@@ -1,2 +1,0 @@
-# hazellake
-hazellake.com
