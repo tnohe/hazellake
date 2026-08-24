@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hazel Lake Partners | Private Investment Firm</title>
+
+  <meta
+    name="description"
+    content="Hazel Lake Partners is focused on acquiring, operating, and building one great business in the Midwest for the long term."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      /* Hazel Lake Partners Brand Colors */
+      --navy: #0B2942;
+      --ivory: #F5F2EA;
+      --olive: #7B8065;
+      --charcoal: #333333;
+      --white: #FFFFFF;
+
+      /* Supporting Values */
+      --hero-ivory: #FAF8F3;
+      --text-muted: rgba(51, 51, 51, 0.72);
+      --text-light: rgba(245, 242, 234, 0.82);
+
+      --border: rgba(11, 41, 66, 0.10);
+      --border-dark: rgba(11, 41, 66, 0.16);
+
+      --max-width: 1200px;
+      --content-width: 800px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--white);
+      color: var(--charcoal);
+      line-height: 1.7;
+      font-size: 16px;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(245, 242, 234, 0.98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(11, 41, 66, 0.12);
+      z-index: 1000;
+      transition: box-shadow 0.3s ease;
+    }
+
+    header.scrolled {
+      box-shadow: 0 3px 18px rgba(11, 41, 66, 0.08);
+    }
+
+    nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 40px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--navy);
+    }
+
+    .nav-contact {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--ivory);
+      background: var(--navy);
+      text-decoration: none;
+      padding: 11px 21px;
+      border: 1px solid var(--navy);
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+      transition: all 0.2s ease;
+    }
+
+    .nav-contact:hover {
+      background: var(--charcoal);
+      border-color: var(--charcoal);
+      color: var(--ivory);
+      transform: translateY(-1px);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 96px 40px 72px;
+      background: linear-gradient(
+        180deg,
+        var(--hero-ivory) 0%,
+        var(--white) 100%
+      );
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--border-dark),
+        transparent
+      );
+    }
+
+    .hero-logo {
+      width: min(480px, 85vw);
+      margin: 24px 0 20px;
+    }
+
+    .hero-logo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--navy);
+      max-width: 750px;
+      line-height: 1.35;
+      margin-top: 0;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-tagline {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    /* Main */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    section {
+      padding: 100px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 500;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+
+    .section-content {
+      max-width: var(--content-width);
+      margin: 0 auto;
+    }
+
+    .section-content p {
+      font-size: 1.0625rem;
+      color: var(--charcoal);
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+
+    .section-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Philosophy Grid */
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .philosophy-item {
+      text-align: center;
+    }
+
+    .philosophy-number {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 3rem;
+      font-weight: 400;
+      color: var(--olive);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .philosophy-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .philosophy-desc {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Investment Criteria */
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .criteria-card {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .criteria-card:hover {
+      border-color: var(--border-dark);
+      box-shadow: 0 4px 20px rgba(11, 41, 66, 0.06);
+    }
+
+    .criteria-card h3 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--olive);
+    }
+
+    .criteria-card ul {
+      list-style: none;
+    }
+
+    .criteria-card li {
+      font-size: 0.9375rem;
+      color: var(--charcoal);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .criteria-card li:last-child {
+      border-bottom: none;
+    }
+
+    .criteria-card li strong {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    /* Ownership Philosophy */
+    .distinction {
+      background: var(--navy);
+      margin: 0 -40px;
+      padding: 100px 40px;
+      border-bottom: none;
+    }
+
+    .distinction .section-label {
+      color: var(--olive);
+    }
+
+    .distinction .section-title {
+      color: var(--ivory);
+    }
+
+    .distinction .section-content p {
+      color: var(--text-light);
+    }
+
+    .distinction-highlight {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--ivory);
+      text-align: center;
+      max-width: 760px;
+      margin: 40px auto 0;
+      line-height: 1.6;
+    }
+
+    /* Name Section */
+    .name-section {
+      text-align: center;
+    }
+
+    .name-section .section-content {
+      max-width: 700px;
+    }
+
+    .name-section .section-content p {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.4rem;
+      line-height: 1.75;
+      color: var(--charcoal);
+    }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      padding: 120px 0;
+      background: linear-gradient(
+        180deg,
+        var(--white) 0%,
+        var(--ivory) 100%
+      );
+    }
+
+    .cta-section .section-title {
+      margin-bottom: 24px;
+    }
+
+    .cta-text {
+      font-size: 1.0625rem;
+      color: var(--charcoal);
+      max-width: 650px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+    }
+
+    .cta-button {
+      display: inline-block;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--ivory);
+      background: var(--navy);
+      text-decoration: none;
+      padding: 16px 40px;
+      border-radius: 4px;
+      letter-spacing: 0.03em;
+      transition: all 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background: var(--charcoal);
+      transform: translateY(-1px);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: rgba(245, 242, 234, 0.65);
+      padding: 60px 40px;
+    }
+
+    .footer-content {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--ivory);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.875rem;
+      color: rgba(245, 242, 234, 0.65);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--ivory);
+    }
+
+    .footer-copyright {
+      font-size: 0.8125rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .philosophy-grid,
+      .criteria-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 24px;
+        height: 64px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-logo img {
+        height: 38px;
+      }
+
+      .nav-contact {
+        padding: 9px 16px;
+        font-size: 0.8125rem;
+      }
+
+      .hero {
+        padding: 100px 24px 60px;
+        min-height: auto;
+      }
+
+      .hero-logo {
+        width: 90vw;
+        margin-bottom: 32px;
+      }
+
+      main {
+        padding: 0 24px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .distinction {
+        margin: 0 -24px;
+        padding: 60px 24px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .cta-section {
+        padding: 80px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="header">
+    <nav>
+
+      <a href="#" class="nav-logo">
+        <img src="logo.png?v=3" alt="Hazel Lake Partners">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#criteria">Investment Criteria</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-contact">Contact Us</a>
+
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-logo">
+      <img src="logo.png?v=3" alt="Hazel Lake Partners">
+    </div>
+
+    <h1>Building and Operating<br>One Great Business</h1>
+
+    <p class="hero-tagline">
+      Focused on acquiring, operating, and growing a single business in the Midwest for the long term.
+    </p>
+
+  </section>
+
+
+  <main>
+
+
+    <!-- APPROACH -->
+
+    <section id="approach">
+
+      <div class="section-header">
+        <span class="section-label">Approach</span>
+        <h2 class="section-title">One Business. Long-Term Ownership.</h2>
+      </div>
+
+      <div class="section-content">
+
+        <p>
+          Hazel Lake Partners was founded with a single goal: to acquire, operate, and build one great business in the Midwest for the long term.
+        </p>
+
+        <p>
+          We are looking for one great business to own and operate for the long term. We understand that every owner has different goals when considering a transition, and we are flexible about what that transition looks like. Our objective is to build on what has made the business successful while investing in its people and future growth.
+        </p>
+
+      </div>
+
+
+      <div class="philosophy-grid" style="margin-top: 64px;">
+
+        <div class="philosophy-item">
+          <div class="philosophy-number">01</div>
+          <h3 class="philosophy-title">Flexible Transition</h3>
+          <p class="philosophy-desc">
+            Working with owners to structure a transition around their goals and the needs of the business.
+          </p>
+        </div>
+
+        <div class="philosophy-item">
+          <div class="philosophy-number">02</div>
+          <h3 class="philosophy-title">Stewardship</h3>
+          <p class="philosophy-desc">
+            Respecting what has been built while investing thoughtfully in the company's continued success.
+          </p>
+        </div>
+
+        <div class="philosophy-item">
+          <div class="philosophy-number">03</div>
+          <h3 class="philosophy-title">Long-Term Ownership</h3>
+          <p class="philosophy-desc">
+            Building for the long term, without a predetermined investment horizon or exit.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INVESTMENT CRITERIA -->
+
+    <section id="criteria">
+
+      <div class="section-header">
+        <span class="section-label">Investment Profile</span>
+        <h2 class="section-title">What We Look For</h2>
+      </div>
+
+      <div class="section-content">
+
+        <p>
+          Hazel Lake Partners focuses on established, profitable businesses in fragmented industries with durable demand and attractive long-term fundamentals. We are particularly drawn to essential products and services, recurring customer needs, and businesses that benefit from strong local or regional market positions.
+        </p>
+
+      </div>
+
+      <div class="criteria-grid">
+
+        <div class="criteria-card">
+
+          <h3>Target Industries</h3>
+
+          <ul>
+            <li>Essential &amp; Field Services</li>
+            <li>Logistics &amp; Transportation</li>
+            <li>Healthcare Services</li>
+            <li>Distribution &amp; Wholesaling</li>
+            <li>Light Manufacturing &amp; Fabrication</li>
+            <li>Agriculture &amp; Ag-Tech</li>
+          </ul>
+
+        </div>
+
+        <div class="criteria-card">
+
+          <h3>Financial Profile</h3>
+
+          <ul>
+            <li>Revenue greater than <strong>$5 million</strong></li>
+            <li>A history of profitability</li>
+            <li>Net profits in excess of <strong>$500,000</strong></li>
+          </ul>
+
+        </div>
+
+        <div class="criteria-card">
+
+          <h3>Geographic Focus</h3>
+
+          <ul>
+            <li>Kansas</li>
+            <li>Missouri</li>
+            <li>Nebraska</li>
+            <li>Iowa</li>
+            <li>Arkansas</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- OWNERSHIP PHILOSOPHY -->
+
+    <section class="distinction" id="philosophy">
+
+      <div class="section-header">
+        <span class="section-label">Philosophy</span>
+        <h2 class="section-title">A Different Approach to Ownership</h2>
+      </div>
+
+      <div class="section-content">
+
+        <p>
+          Hazel Lake Partners is not building a portfolio of companies. We are looking for one great business where we can invest our time, energy, and capital alongside the people who made it successful.
+        </p>
+
+        <p>
+          We believe great businesses are built over decades, not investment cycles. Our goal is to preserve what works, invest thoughtfully in future growth, and create lasting value for employees, customers, partners, and the community.
+        </p>
+
+      </div>
+
+      <p class="distinction-highlight">
+        Our goal is to honor what an owner has built and carry that legacy forward.
+      </p>
+
+    </section>
+
+
+    <!-- THE NAME -->
+
+    <section class="name-section" id="name">
+
+      <div class="section-header">
+        <span class="section-label">The Name</span>
+        <h2 class="section-title">Hazel Lake</h2>
+      </div>
+
+      <div class="section-content">
+
+        <p>
+          <em>Hazel</em> is a color without a single definition. A <em>lake</em> has no marked path. Together, the name reflects the judgment, perspective, and conviction required to choose a direction and see it through.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="cta-section" id="contact">
+
+      <span class="section-label">For Business Owners</span>
+
+      <h2 class="section-title">Start a Conversation</h2>
+
+      <p class="cta-text">
+        If you own a business and are considering a transition, we would welcome a confidential conversation to learn about your company, your goals, and what matters most to you in choosing its next owner.
+      </p>
+
+      <a href="mailto:hello@hazellakepartners.com" class="cta-button">
+        Contact Us
+      </a>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-content">
+
+      <div class="footer-logo">
+        Hazel Lake Partners
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#criteria">Investment Criteria</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="mailto:hello@hazellakepartners.com">Contact</a></li>
+      </ul>
+
+      <div class="footer-copyright">
+        &copy; 2026 Hazel Lake Partners. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+      anchor.addEventListener('click', function (e) {
+
+        e.preventDefault();
+
+        const href = this.getAttribute('href');
+
+        if (href === '#') {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+          return;
+        }
+
+        const target = document.querySelector(href);
+
+        if (target) {
+
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition =
+            elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
